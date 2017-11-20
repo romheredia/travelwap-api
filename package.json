@@ -1,0 +1,26 @@
+{
+  "name": "travelwap",
+  "version": "1.0.0",
+  "description": "Travel Agency Website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "author": "Rodrigo Adati",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "*",
+    "cors": "^2.8.4",
+    "express": "*",
+    "mongoose": "*",
+    "nodemailer": "^4.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "engines": {
+    "node": "6.11.3"
+  }
+}
