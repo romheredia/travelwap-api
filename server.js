@@ -82,9 +82,9 @@ app.use('/package', package);
 /***************************************************/
 
 //Error message for non-existing routes
-app.use((req, res) => {
-  res.status(404).send({ url: req.originalUrl + ' not found' })
-});
+// app.use((req, res) => {
+//   res.status(404).send({ url: req.originalUrl + ' not found' })
+// });
 
 app.set('port', (process.env.port || 5000));
 
