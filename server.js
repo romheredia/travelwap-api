@@ -8,13 +8,13 @@ const config = require('./config/database');
 //DATABASE CONNECTOR
 /*********************/
 //Connect to database
-// mongoose.connect(config.database, { useMongoClient: true });
-// mongoose.Promise = global.Promise;
+mongoose.connect(config.database, { useMongoClient: true });
+mongoose.Promise = global.Promise;
 
 //Check if the connection was stablished
-// mongoose.connection.on('connected', () => {
-//   console.log('Connected to database' + config.database);
-// });
+mongoose.connection.on('connected', () => {
+  console.log('Connected to database' + config.database);
+});
 
 /***************************************************/
 //EXPRESS SETUP
@@ -40,8 +40,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //HEADER SETUP
 /***************************************************/
 app.use(function (req, res, next) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
@@ -87,7 +87,7 @@ app.get('/', function (req, res) {
 
 //Error message for non-existing routes
 app.use( function(req, res) {
-  // res.status(404).send({url: req.originalUrl + ' not found'})
+  res.status(404).send({url: req.originalUrl + ' not found'})
 });
 
 
