@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const cors = require('cors');
 const config = require('./config/database');
 
@@ -8,13 +8,13 @@ const config = require('./config/database');
 //DATABASE CONNECTOR
 /*********************/
 //Connect to database
-mongoose.connect(config.database, { useMongoClient: true });
-mongoose.Promise = global.Promise;
+// mongoose.connect(config.database, { useMongoClient: true });
+// mongoose.Promise = global.Promise;
 
 //Check if the connection was stablished
-mongoose.connection.on('connected', () => {
-  console.log('Connected to database' + config.database);
-});
+// mongoose.connection.on('connected', () => {
+//   console.log('Connected to database' + config.database);
+// });
 
 /***************************************************/
 //EXPRESS SETUP
