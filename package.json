@@ -1,5 +1,5 @@
 {
-  "name": "travelwap",
+  "name": "travelwap-api",
   "version": "1.0.0",
   "description": "Travel Agency Website",
   "main": "server.js",
