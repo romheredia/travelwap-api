@@ -92,7 +92,12 @@ app.use( function(req, res) {
 
 
 //Listen for requests
+var server = app.listen(process.env.port || 8080, function () {
+  var port = server.address().port;
+  console.log('now listening for requests on port: ' + port);
+});
 // var port = process.env.port || 8080;
 // app.listen(process.env.port || 5000, function () {
 //   console.log('now listening for requests on port: ' + this.address().port);
 // });
+
