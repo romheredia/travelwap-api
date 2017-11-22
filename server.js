@@ -80,19 +80,20 @@ app.use('/package', package);
 /***************************************************/
 //ROUTERS
 /***************************************************/
-app.get('/', (req, res) => {
-  console.log('GET request');
-  res.send('DEFAULT');
-})
 
 //Error message for non-existing routes
 app.use((req, res) => {
-  res.status(404).send({url: req.originalUrl + ' not found'})
+  res.status(404).send({ url: req.originalUrl + ' not found' })
 });
 
+app.set('port', (process.env.port || 5000));
 
-//Listen for requests
-const port = process.env.port || 5000;
-app.listen(port, () => {
-  console.log('now listening for requests on port: ' + port);
+app.get('/', (req, res) => {
+  var result = 'App is running';
+  // console.log('GET request');
+  res.send(result);
+}).listen(app.get('port'), () => {
+  console.log('App is running, server is listening on port ', app.get('port'));
 });
+
+// app.listen(process.env.port || 5000);
